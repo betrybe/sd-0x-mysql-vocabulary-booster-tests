@@ -135,6 +135,15 @@ describe('Desafios iniciais', () => {
     });
   });
 
+  describe('Faça um relatório que mostra o **histórico de cargos das pessoas empregadas**, mostrando as datas de início e de saída, assim como os anos que ela ficou nesse cargo', () => {
+    it('Verifica o desafio 18', async () => {
+      const challengeQuery = readFileSync('desafio18.sql', 'utf8').trim();
+      const expectedResult = require('./challengesResults/challengeResult18');
+
+      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(expectedResult);
+    });
+  });
+
   describe('Crie uma função chamada `exibir_quantidade_pessoas_contratadas_por_mes_e_ano` no banco de dados `hr` que, dados o mês e ano como parâmetros nessa ordem, retorna a quantidade de pessoas funcionárias **que foram contratadas** nesse mês e ano', () => {
     it('Verifica o desafio 19', async () => {
       const challengeQuery = readFileSync('desafio19.sql', 'utf8').trim();
