@@ -155,7 +155,7 @@ describe('Desafios iniciais', () => {
 
   describe('Toda pessoa funcionária no banco `hr` possui um histórico completo de cargos. Logo, crie uma procedure chamada `exibir_historico_completo_por_funcionario` que, dado o e-mail de uma pessoa funcionária, retorna todos os cargos em seu histórico', () => {
     it('Verifica o desafio 20', async () => {
-      const challengeQuery = readFileSync('desafio19.sql', 'utf8').trim();
+      const challengeQuery = readFileSync('desafio20.sql', 'utf8').trim();
       const createProcedureQuery = /CREATE PROCEDURE.*END/si.exec(challengeQuery)[0];
 
       await sequelize.query(createProcedureQuery);
