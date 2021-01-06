@@ -84,4 +84,16 @@ describe('Desafios iniciais', () => {
       expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(expectedResult);
     });
   });
+
+  describe('Crie uma TRIGGER que, a cada nova inserção realizada na tabela `orders`, insira automaticamente a data atual na coluna `OrderDate`', () => {
+    it('Verifica o desafio 17', async () => {
+      const challengeQuery = readFileSync("desafio17.sql", "utf8").trim();
+      const expectedResult = require("./challengesResults/challengeResult17");
+
+      const result = await sequelize.query(challengeQuery.toString(), { type: "SELECT" });
+      expect(result[0]).toEqual(expectedResult[0]);
+      expect(result[1]).toEqual(expectedResult[1]);
+      expect(result[2]).toEqual(expectedResult[2]);
+    });
+  });
 });
